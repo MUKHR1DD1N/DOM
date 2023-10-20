@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 200px;
+  height: 100px;
+  background: rgb(127, 127, 127);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked+label {
+  background: #3700ff;
+}
+
+input:checked+label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+
+body {
+  transition-duration: 0.5s;
+
+  color: rgb(111, 111, 111);
+}
+
+/* // centering */
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  } */
+
+.colorButton {
+  margin-top: 4px;
+  overflow: hidden;
+  width: 45px;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.colorButton>div {
+  height:  11px;
+  width:  45px;
+}
+.colorButton>div:nth-child(1){
+  background-color: red;
+}
+.colorButton>div:nth-child(2){
+  background-color: yellow;
+}
